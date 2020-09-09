@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>The game of mystery</title>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="mystery.css">
+		<meta content="Личный сайт студента GeekBrains" name="description">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<script type="text/javascript">
+			var rightAnswers = 0;
+
+			function checkAnswer(inputId, answers){
+				var userAnswer = document.getElementById(inputId).value;
+				userAnswer = userAnswer.toLowerCase();
+				for (var i = 0; i < answers.length; i++) {
+					if(userAnswer == answers[i]){
+						rightAnswers++;
+						break;
+					}
+				}
+			}
+			function checkAnswers(){
+				checkAnswer("userAnswer1", ["белка", "белочка"]);
+				checkAnswer("userAnswer2", ["семеро козлят"]);
+				checkAnswer("userAnswer3", ["рояль"]);
+				checkAnswer("userAnswer4", ["земляника"]);
+
+				alert("Правильных ответов: " + rightAnswers);
+			}
+		</script>
+	</head>
+	<body>
+		<header class="header">
+			<div class="top_line">
+				<div class="container">
+					<div class="nav">
+						<ul class="menu">
+							<li>
+								<a href="../index.html">Главная</a>
+							</li>
+							<li>
+								<a href="mystery.html">Загадки</a>
+							</li>
+							<li>
+								<a href="../Guess the number/number.html">Угадайка</a>
+							</li>
+							<li>
+								<a href="../Guess the number 1х1/number1x1.html">Угадайка 1x1</a>
+							</li>							
+						</ul>
+						<button class="menu-open">
+							<img src="../Photo/menu.svg" alt="Открыть меню">
+						</button>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="about">
+			<div class="container">
+				<h2>The game of mystery</h2>
+				<div class="box">
+					<p>
+						Первая загадка:<br>По деревьям скок-скок,<br>А орешки щёлк-щёлк.<br>Кто это?
+					</p>
+					<input type="text" name="mystery" id="userAnswer1" class="style">
+					<p>
+						Вторая загадка:<br>Ждали маму с молоком,<br>А пустили волка в дом...<br>Кем же были эти<br>Маленькие дети?
+					</p>
+					<input type="text" name="mystery" id="userAnswer2" class="style">
+					<p>
+						Третья загадка:<br>Я стою на трех ногах,<br>Ноги в черных сапогах.<br>Зубы белые, педаль.<br>Как зовут меня?
+					</p>
+					<input type="text" name="mystery" id="userAnswer3" class="style">
+					<p>
+						Четвёртая загадка:<br>Ягодку сорвать легко<br>Ведь растет невысоко.<br>Под листочки загляни-ка<br>Там созрела...
+					</p>
+					<input type="text" name="mystery" id="userAnswer4" class="style">
+					<br>
+					<a href="#" class="button" onClick="checkAnswers();">Ответить</a>
+				</div>
+			</div>				
+		</section>
+		<footer class="footer">
+			<div class="container">
+				<div class="footer-copyright">
+					<p>
+						Copyright &copy; Skvortsov Alexander
+					</p>
+				</div>
+			</div>
+		</footer>
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+		<script src="../JS/main.js"></script>
+	</body>
+</html>
